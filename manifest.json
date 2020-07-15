@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    "version": "2.1.202",
+    "minimum_chrome_version": "69",
+    "name": "Comments Search for Youtube",
+    "description": "Search youtube comments by keywords",
+    "icons": {
+        "16": "/html/icons/icon16.png",
+        "32": "/html/icons/icon32.png",
+        "48": "/html/icons/icon48.png",
+        "96": "/html/icons/icon96.png"
+    },
+    "permissions": [
+        "storage",
+        "alarms",
+        "https://*.youtube.com/*"
+    ],
+    "externally_connectable": {
+        "matches": [
+            "https://api.lett.app/*"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "css": [
+                "/html/style.css"
+            ],
+            "js": [
+                "/js/content.js"
+            ]
+        }
+    ],
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "/js/background.js"
+        ]
+    },
+    "web_accessible_resources": [
+        "html/*"
+    ],
+    "browser_action": {},
+    "commands": {}
+}
